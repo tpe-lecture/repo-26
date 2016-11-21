@@ -6,6 +6,8 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.Random;
+import java.util.Stack;
+
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.SimpleImage;
@@ -20,6 +22,7 @@ public class GameBoard extends Board {
 
     /** Münzstapel. */
     // TODO: Münzen als Stack speichern
+    Stack<Sprite> muenzenStack = new Stack<>();
 
     /** A moving coin. */
     private Sprite moving;
@@ -78,6 +81,10 @@ public class GameBoard extends Board {
     @Override
     public synchronized void drawGame(Graphics g) {
         // TODO: Über alle Objekte im Stapel laufen und sie zeichnen
+        for(int i=muenzenStack.size();i>=0;i--){
+
+
+        }
 
         if (moving != null) {
             moving.draw(g, this);
@@ -129,11 +136,11 @@ public class GameBoard extends Board {
      */
     @Override
     public boolean updateGame() {
-        
+
         if (moving != null) {
             moving.move();
         }
-        
+
         // TODO: Solange Stapel noch Elemente enthält, true zurückgeben.
         return true;
     }
