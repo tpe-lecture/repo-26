@@ -34,11 +34,15 @@ public final class Zahlenraten {
             throws NumberFormatException, IOException {
 
         // zu ratende Zahl bestimmen
-        int zahl = new Random().nextInt(100) + 1;
+//        int zahl = new Random().nextInt(100) + 1;
+      int zahl = 33;
+
 
         int versuche = 0;
 
+
         while (true) {
+            try{
             System.out.print("Bitte geben Sie eine Zahl ein: ");
             int geraten  = Integer.parseInt(readNumber());
             versuche++;
@@ -53,6 +57,11 @@ public final class Zahlenraten {
                 System.out.printf("Richtig in %d Versuchen", versuche);
                 break;
             }
-        }
+            }catch(NumberFormatException e)
+            {
+                System.out.println(e.getMessage());
+             }
+         }
+
     }
 }
