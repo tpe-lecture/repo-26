@@ -1,5 +1,7 @@
 package tpe.nested.nonstaticmember;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.AnimatedImage;
@@ -27,6 +29,12 @@ public class Alien extends AnimatedSprite {
                 new AnimatedImage(50,
                         new ImagePack("assets", "ship01", "ship02", "ship03")));
         velocity.setVelocity(Direction.WEST, ALIEN_SPEED);
+//        MouseListener ml = new MouseAdapter() {
+//            public void mousePressed() {
+//                explode();
+//            }
+//
+//        };
     }
 
     /**
