@@ -1,6 +1,7 @@
 package tpe.collections.iterate;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -13,6 +14,7 @@ import de.smits_net.games.framework.sprite.Sprite.BoundaryPolicy;
  * Klasse, die eine beliebige Menge an Geld generiert.
  */
 public class CoinGenerator implements Iterable<Sprite> {
+
 
     /** Zufallszahlen-Generator. */
     private static final Random RND = new Random();
