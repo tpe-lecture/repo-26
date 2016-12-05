@@ -21,12 +21,13 @@ public class Main {
         NumberSelector s = new NumberSelector();
 
         // TODO: Gerade Zaheln filtern
-        int[] gerade = null;
+//        int[] gerade = null;
+        int[] gerade = s.filter((j)->j%2 == 0,ZAHLEN);
 
         System.out.println(Arrays.toString(gerade));
 
         // TODO: Ungerade Zaheln filtern
-        int[] ungerade = null;
+        int[] ungerade = s.filter((j)->j%2 != 0,ZAHLEN);
 
         System.out.println(Arrays.toString(ungerade));
 
