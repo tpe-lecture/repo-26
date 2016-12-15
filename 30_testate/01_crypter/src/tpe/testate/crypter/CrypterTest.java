@@ -24,7 +24,16 @@ public class CrypterTest {
 
         assertEquals("", c.encrypt(""));
     }
+    @Test
+     public void testEncryptIllegal() {
+		Crypter c = new CrypterImpl();
 
+	    assertEquals("4bcd3fghijk1mn0pqrs7uvwxyzl2ea56t89o",
+		c.encrypt("ABCDEFGHIJKLMNOPQRSTU!()/VWXYZ1234567890"));
+
+	    assertEquals("4bcd3fghijk1mn0pqrs7uvwxyzl2ea56t89o",
+	     c.encrypt("!A!B(CDEFG)hIJKLMNOPQRSTUVWXYZ1234567890"));
+     }
     @Test
     public void testDecrypt() {
         Crypter c = new CrypterImpl();
