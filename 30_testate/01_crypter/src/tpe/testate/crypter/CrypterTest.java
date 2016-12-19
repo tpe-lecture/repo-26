@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test für die Verschlüsselung.
+ * Test für die Verschlüsselungen.
  */
 public class CrypterTest {
 
@@ -24,7 +24,7 @@ public class CrypterTest {
         assertEquals("", c.encrypt(""));
     }
     @Test
-     public void testEncryptIllegal() {
+     public void testEncryptIllegal1() {
 		Crypter c = new CrypterImpl();
 
 	    assertEquals("4bcd3fghijk1mn0pqrs7uvwxyzl2ea56t89o",

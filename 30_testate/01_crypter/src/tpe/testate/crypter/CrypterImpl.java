@@ -7,7 +7,7 @@ package tpe.testate.crypter;
 
 public class CrypterImpl implements Crypter {
 
-	/**
+	/**ljnk
 	 * This method encrypts the input
 	 * @param input: The input that needs to be encrypted
 	 */
