@@ -60,16 +60,32 @@ public class Ufo extends AnimatedImage implements Runnable {
     public void run() {
         while (x < board.getWidth()) {
 
-            // Ufo weiter bewegen
-            x++;
 
-            // Schlafen, bis die nächste Bewegung erfolgen soll
-            try {
-                Thread.sleep(sleepTime);
+            if(x==stopPosition){
+                synchronized(board){
+                    board.notifyAll();
+
+
+                    try {
+                        board.wait();
+//                        x++;
+                    }
+                    catch (InterruptedException e) {
+                        break;
+                    }
+                }
             }
-            catch (InterruptedException e) {
+         // Ufo weiter bewegen
+            x++;
+         // Schlafen, bis die nächste Bewegung erfolgen soll
+            try{
+                Thread.sleep(sleepTime);
+            }catch (InterruptedException e) {
                 break;
             }
+
         }
+
+
     }
 }

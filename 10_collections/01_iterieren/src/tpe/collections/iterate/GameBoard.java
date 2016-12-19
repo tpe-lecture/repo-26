@@ -40,6 +40,8 @@ public class GameBoard extends Board {
        while (it.hasNext()) {
            coinList.add(it.next());
       }
+
+
     }
 
 

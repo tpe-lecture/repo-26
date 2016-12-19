@@ -30,10 +30,16 @@ public class NumberIncrementer implements Runnable {
      * @see java.lang.Runnable#run()
      */
     public void run() {
+
         for (int i = 0; i < boundary; i++) {
+        synchronized (numberList) {
+
             int lastNum = numberList.getLastNumber();
             lastNum++;
             numberList.add(lastNum);
+
+        }
+
         }
     }
 }
